@@ -7,3 +7,6 @@ Solved in Python.
 - dp
 - sort
 - exhaustive_search
+
+## Graph
+- Baekjoon no.7576 tomato.py
