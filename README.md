@@ -13,8 +13,13 @@ Solved in Python.
 ## Graph
 
 - Baekjoon no.7576 **tomato.py**
+- Baekjoon no.1260 **bfs_and_dfs.py**
 
 ## Exhaustive Search
 
 - **combinations.py**: number of ways to pick n numbers from range(m)
 - **advenced_combinations.py**: get all combinations of selecting n number of items from given population
+
+
+## data-structure
+- **max_heap.py**: max_heap
