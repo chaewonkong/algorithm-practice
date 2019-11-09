@@ -162,3 +162,6 @@ dmypy.json
 .history
 
 # End of https://www.gitignore.io/api/git,macos,python,visualstudiocode
+
+# Kakao Coding Test
+kakao-winter-test/
