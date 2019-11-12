@@ -14,6 +14,7 @@ Solved in Python.
 
 - Baekjoon no.7576 **tomato.py**
 - Baekjoon no.1260 **bfs_and_dfs.py**
+- Programmers, **target_number.py**
 
 ## Exhaustive Search
 
