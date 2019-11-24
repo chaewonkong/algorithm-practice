@@ -23,4 +23,8 @@ Solved in Python.
 
 
 ## data-structure
+- **linked_list.py**: linked_list
 - **max_heap.py**: max_heap
+- **queue.py**: queue
+- **stack.py**: stack
+**binary_tree.py**: binary_tree
