@@ -13,46 +13,92 @@ BFS and DFS
 [출력]
 첫째 줄에 DFS를 수행한 결과를, 그 다음 줄에는 BFS를 수행한 결과를 출력한다. V부터 방문된 점을 순서대로 출력하면 된다.
 """
+# from collections import deque
+
+
+# def dfs(matrix, n, v):
+#     visited = []
+
+#     def search(v):
+#         if v not in visited:
+#             visited.append(v)
+
+#         for i in range(1, n):
+#             if matrix[v][i] == 1 and i not in visited:
+#                 visited.append(i)
+#                 search(i)
+#         return
+
+#     search(v)
+#     return " ".join(map(str, visited))
+
+
+# def bfs(matrix, n, v):
+#     visited = [v]
+#     dq = deque([v])
+
+#     while dq:
+#         v = dq.popleft()
+#         for i in range(1, n):
+#             if matrix[v][i] == 1 and i not in visited:
+#                 visited.append(i)
+#                 dq.append(i)
+
+#     return " ".join(map(str, visited))
+
+
+# if __name__ == "__main__":
+#     N, M, V = map(int, input().split())
+#     matrix = [[0 for _ in range(N+1)] for _ in range(N+1)]
+#     for _ in range(M):
+#         i, j = map(int, input().split())
+#         matrix[i][j] = matrix[j][i] = 1
+
+#     print(dfs(matrix, N+1, V))
+#     print(bfs(matrix, N+1, V))
+
+
+# Practice 2
 from collections import deque
 
 
-def dfs(matrix, n, v):
-    visited = []
+def dfs(matrix, start):
+    visited = [start]
+    n = len(matrix)
 
     def search(v):
         if v not in visited:
             visited.append(v)
-
-        for i in range(1, n):
+        for i in range(n):
             if matrix[v][i] == 1 and i not in visited:
                 visited.append(i)
                 search(i)
         return
 
-    search(v)
+    search(start)
     return " ".join(map(str, visited))
 
 
-def bfs(matrix, n, v):
-    visited = [v]
-    dq = deque([v])
+def bfs(matrix, start):
+    queue = deque([start])
+    n = len(matrix)
+    visited = [start]
 
-    while dq:
-        v = dq.popleft()
-        for i in range(1, n):
-            if matrix[v][i] == 1 and i not in visited:
+    while queue:
+        v = queue.popleft()
+
+        for i in range(n):
+            if matrix[i][v] == 1 and i not in visited:
                 visited.append(i)
-                dq.append(i)
+                queue.append(i)
 
     return " ".join(map(str, visited))
 
 
 if __name__ == "__main__":
-    N, M, V = map(int, input().split())
+    [N, M, V] = map(int, input().split())
     matrix = [[0 for _ in range(N+1)] for _ in range(N+1)]
     for _ in range(M):
         i, j = map(int, input().split())
         matrix[i][j] = matrix[j][i] = 1
-
-    print(dfs(matrix, N+1, V))
-    print(bfs(matrix, N+1, V))
+    print(dfs(matrix, V))
